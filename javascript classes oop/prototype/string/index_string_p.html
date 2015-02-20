@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>js prototype</title>
+	<script src="prototype.string.js"></script>
+	<style>
+ 		#rev-out { background:yellow; margin:0 0 0 5px;}
+	</style>
+</head>
+<body>
+
+<h3>String protoype : reverseIt function</h3>
+<p>String prototype : <input type="text" id="reverse"><input type="submit" id="run-reverse" value="run reverse"><span id="rev-out"></span></p>
+<script>
+// now we will run our reverse function
+var r_input = document.getElementById('reverse'),
+r_sub = document.getElementById('run-reverse'),
+r_out = document.getElementById('rev-out');
+
+r_sub.onclick = function(){
+	r_out.innerHTML = r_input.value.reverseIt();
+};
+
+var str = new String();
+console.log(str);
+</script>
+</body>
+</html>

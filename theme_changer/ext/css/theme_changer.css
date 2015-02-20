@@ -1,0 +1,93 @@
+/*
+* Main container :
+*/
+#theme-changer-container { width:100%; height:55px; position:fixed; top:0px; min-width:900px; z-index:10999; opacity:0.7; border-bottom:#000 1px solid; } 
+#theme-changer-container:hover { opacity:1;}
+#theme-changer-container .theme-changer-section { width:32%; height:100%; position:relative; float:left; }
+#theme-changer-container .theme-changer-section:last-child {width:4%; height:100%; position:relative; float:left;  }
+
+#theme-changer-container .logo h3 { text-align:center; line-height:55px; font-size:24px;  padding:0px !important; margin:0px !important;}
+
+/*
+* Inner section containers :
+*/
+#theme-changer-container #theme-changer-select-container { position:absolute; width:100%; height:55px; overflow:hidden; z-index:11000; }
+#theme-changer-container #theme-changer-select-container:hover { overflow:visible;  }
+
+#theme-changer-select { width:100%; position:relative;}
+#theme-changer-select-container p { width:85%; float:left; text-align:center; font-size:28px !important; line-height:50px !important; margin:3px 0 2px 0 !important; color:#fff; }
+
+/**##################*/
+#theme-changer-container {
+ background:#999;
+}
+#theme-changer-container .logo h3 {
+font-family:Arial, Helvetica, sans-serif !important;
+ color:#fff;
+}
+#theme-changer-select-container p {font-family:Arial, Helvetica, sans-serif !important; }
+#theme-changer-select-container .arrow-down {border-top: 20px solid #fff;}
+/*#####################**/
+
+#theme-changer-select-container .arrow-down { width:12%; margin:5% 0 0 0; float:right; width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; }
+
+#theme-changer-select-container ul#theme-changer-select { clear:both; border-bottom:1px solid #000; border-left:1px solid #000; border-right:1px solid #000;  border-radius:0 0 12px 12px;}
+ul#theme-changer-select li { 
+list-style:none;
+padding:8px 0 8px 12px;
+background:#999;
+text-align:left;
+}
+ul#theme-changer-select li a {
+-webkit-transition: all 0.3s ease-out;
+font-family:Arial, Helvetica, sans-serif !important;
+font-size:20px;
+text-decoration:none;
+text-transform:uppercase;
+text-decoration:none;
+color:#fff;
+display:block;
+ cursor:pointer;
+}
+ul#theme-changer-select li:hover { background:#333; -webkit-transition: all 0.3s ease-in;}
+ul#theme-changer-select li:last-child { border-radius:0 0 12px 12px;}
+
+
+
+/* Download link */
+
+#theme-changer-container .download .theme-changer-download {
+	position:absolute;
+	margin: 17% 0 0 30%;
+	color:#000;
+	background: #fff;
+	text-decoration:none;
+	padding:7px 22px 7px 22px;
+	border-radius: 12px;
+	border: #fff 2px solid;
+	font-size:20px;
+}
+#theme-changer-container .download .theme-changer-download:hover {
+	border: #000 2px solid;
+}
+
+/*****/	
+
+/* hider link */
+#theme-changer-container .theme-changer-section #theme-bar-hide, #theme-changer-container .theme-changer-section #theme-bar-hidden {
+	text-decoration: none !important;
+	font-size: 25px !important;
+	font-weight:bold !important;
+	color:#fff !important;
+	position:absolute !important;
+	right:10px !important;
+	top:22% !important;
+}
+#theme-changer-container .theme-changer-section #theme-bar-hide:hover, #theme-changer-container .theme-changer-section #theme-bar-hidden:hover {
+	color:#000 !important;
+}
+/****/
+/*******************************************/
+.theme-errors { width:75%; height:auto; margin:120px auto 0 auto; background:#FFF; padding:12px; border-radius:6px; text-align:center;}
+.theme-errors h4 { text-align:center; margin:0 0 5px 0; color:#F00; text-decoration:underline;}
+.theme-errors ul li { list-style:none;}

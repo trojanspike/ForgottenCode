@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>public private & construct</title>
+	<script src="pub_priv_const.js"></script>
+	<style>
+	p{font-size:1.3em;}
+	p i {color:#F00;}
+	</style>
+</head>
+<body>
+<div id="count"></div>
+<div id="out-1"></div>
+<div id="out-2"></div>
+<div id="out-3"></div>
+<div id="out-4"></div>
+<div id="out-5"></div>
+<script>
+//  in the script we have an error change to make sure 
+//  the construct takes a sting , but it can take
+//  a string , object / array. {} , []
+//  No function tho .
+//  it can also take multiple prams
+var ppc = new pubPrivConst('passed pram');
+console.log(ppc);
+// noe some testing : lil run through
+var c = 0;
+var set = setInterval(function(){
+	document.getElementById('count').innerHTML = c+'- RUNNING';
+
+	switch(c){
+		case 3:
+			document.getElementById('out-1').innerHTML = '<p>Public passed Pram = <i>'+ppc.passedPram+'</i> , publicVar = <i>'+ppc.publicVar+'</i>, the privateVar = <i>'+ppc.privateVar+'</i></p>';
+		break;
+		case 6:
+		document.getElementById('out-2').innerHTML = '<p>Public errors found to be <i>'+ppc.errors+'</i></p>';
+		break;
+		case 9:
+		document.getElementById('out-3').innerHTML = '<p>Now testing the public and private functions, see script. This will give an error and stop the script, <i>comment out line 42 in the html page</i></p>';
+
+		// here :)
+		// will give a script error, comment-out to continue
+		ppc.privateinit();
+
+		// will be ok
+		ppc.publicinit();
+		break;
+		case 12:
+		document.getElementById('out-5').innerHTML = '<p>Now we will test the init self made construct by passing a non string.</p>';
+		break;
+		case 14:
+		// by us passing and object this will set off an error
+			var ppc_2 = new pubPrivConst({variable:'hello'});
+		/*
+		publicly used as 
+		if(ppc_2.errors === true){
+			do stuff :: === true :: , not fully needed, if(ppc_2.errors) would do
+		}
+		 */	
+		break;
+	}
+
+	if(c === 15){
+		document.getElementById('count').innerHTML = c+'- END, I hope you find this useful';
+		clearInterval(set);
+	}
+	++c;
+}, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>callbacks</title>
+	<script src="class.callback.js"></script>
+</head>
+<body>
+<p id="callback1"></p>
+<script>
+// make a new instance of the class
+var calls = new callBacks();
+console.log(calls);
+
+// make the call back function to be caught in the method
+calls.callback1(function(err, added_data){
+		document.getElementById('callback1').innerHTML = err+' : '+added_data;
+	});
+
+	calls.returnVar(
+		function(data){
+		alert('this var :'+data+': was retrieved from the class.');
+		});
+
+	calls.tryPrivVar(
+		function(data){
+			// will give an error because no priv vars can be gotten from the class
+			alert('this private var :'+data+': was unretrieable from the class.');
+		});
+</script>
+</body>
+</html>

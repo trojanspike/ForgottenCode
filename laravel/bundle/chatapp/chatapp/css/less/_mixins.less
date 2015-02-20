@@ -1,0 +1,25 @@
+.trans(@trans){
+    -webkit-transition:@trans;
+    -moz-transition:@trans;
+    -ms-transition:@trans;
+    -o-transition:@trans;
+    transition:@trans;
+}
+.box-shadow(@shad){
+    -webkit-box-shadow:@shad;
+    -moz-box-shadow:@shad;
+    -ms-box-shadow:@shad;
+    -o-box-shadow:@shad;
+    box-shadow:@shad;
+}
+
+.chatGrad(){
+    background: rgb(6,118,184);
+    background: -moz-linear-gradient(top,  rgba(6,118,184,1) 0%, rgba(53,106,160,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(6,118,184,1)), color-stop(100%,rgba(53,106,160,1)));
+    background: -webkit-linear-gradient(top,  rgba(6,118,184,1) 0%,rgba(53,106,160,1) 100%);
+    background: -o-linear-gradient(top,  rgba(6,118,184,1) 0%,rgba(53,106,160,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(6,118,184,1) 0%,rgba(53,106,160,1) 100%);
+    background: linear-gradient(to bottom,  rgba(6,118,184,1) 0%,rgba(53,106,160,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0676b8', endColorstr='#356aa0',GradientType=0 );
+}

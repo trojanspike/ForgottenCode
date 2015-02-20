@@ -1,0 +1,26 @@
+* { padding:0; margin:0; list-style:none; }
+body { background-color:#CCC; }
+.container { width:1000px; height:auto; margin:0 auto 10px auto; }
+header { width:100%; height:140px; border-bottom:#F00 solid 1px; }
+/**
+* Nav
+**/
+.ui-main-nav ul{ padding-top:5px; background-color:#6a6a6a; height:40px; border-bottom:#F00 solid 1px;	}
+	.ui-main-nav li{ margin-left:10px; float:left; }
+	.ui-main-nav li a{ background:#555555; color:#cccccc; display:block; line-height:35px; padding:0px 25px;
+		text-align:center; text-decoration:none; }
+		.ui-main-nav li a:hover, .ui-main-nav ul li:hover a{ background-color:#000; color:#0FC; text-decoration:none; }
+	.ui-main-nav li ul{ background-color:#6a6a6a; display:none; height:auto; position:absolute; width:225px; z-index:200; }
+	.ui-main-nav li:hover ul{display:block;}
+	.ui-main-nav li li { display:block; float:none; width:90%; padding:0 0 10px 0; }
+	.ui-main-nav li:hover li a{ background:none; }
+	.ui-main-nav li ul a{ display:block; height:30px; font-size:15px; padding:0px 10px 0px 15px; text-align:left; }
+		.ui-main-nav li ul a:hover, .ui-main-nav li ul li:hover a{ background-color:#f2f2f2; color:#000; text-decoration:none; }
+/* Nav class for follow*/
+.ui-nav-fixed { position:fixed; top:0px; opacity:0.6; -webkit-transition: all 0.8s ease-out;  -moz-transition: all 0.8s ease-out;  
+-ms-transition: all 0.8s ease-out; -o-transition: all 0.8s ease-out; transition: all 0.8s ease-out; }
+.ui-nav-fixed ul { border-radius:0 0 8px 8px; padding-right:8px; }
+.ui-nav-fixed:hover { opacity: 1; -webkit-transition: all 0.8s ease-in; -moz-transition: all 0.8s ease-in; -ms-transition: all 0.8s ease-in; -o-transition: all 0.8s ease-in;  transition: all 0.8s ease-in; }
+/**************/
+.content { width:100%; min-height:1500px; }
+footer { width:100%; height:140px; border-top:#F00 solid 1px; }

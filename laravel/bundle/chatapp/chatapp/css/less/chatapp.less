@@ -1,0 +1,65 @@
+@import '_mixins.less';
+
+#chat-app { 
+    border-radius:5px 5px 0 0;
+    .trans(bottom 0.8s ease);
+    width:380px; height:480px; background:#FFF;
+    bottom:10px; right:10px; z-index:15;
+    position:fixed;
+    .box-shadow(~'0 0 10px -2px #000 , -6px -6px 9px -8px #000');
+    
+    &.in-active{bottom:-450px;}
+/**/
+    .chat-inner{position:relative; width:100%;}
+/******/
+    >#chat-options{height:30px; .box-shadow(~'-4px 12px 6px -10px #666');
+border-radius:5px 5px 0 0;
+
+.chatGrad();
+        ul{position:relative; padding:0px; margin:0px; width:100%; height:30px;
+            li{width:auto; height:100%; float:left; list-style:none; padding:0 2px 0 2px; margin:0 0 0 3px; color:#FFF; line-height:30px;}
+            h5{padding:0px; margin:0px; line-height:30px;}
+           .active{
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+                }     
+        /* arrow */
+            .arrow{ background:url('../img/arrow.png') no-repeat; width:30px; height:30px; cursor:pointer; }
+        }
+    }
+/*******************/
+    >#chat-messages{height:350px;
+    
+        ul {
+            background:#EFEFEF;
+            margin:0px; padding:0px;
+            position:relative; width:100%; height:100%; overflow-y:scroll;
+
+           /**/
+           li {list-style:none; padding:1px 0px 0px 5px; text-indent:8px; margin:4px 0 2px 0; background:#FFF;
+           &:first-child{margin-top:6px;}
+            border-left:2px solid #0676B8;
+            border-top:1px solid #666;
+            .box-shadow(~'0px 3px 16px -4px #000');
+
+                >h6{margin:0 0 8px 0; font-size:1.1em; .box-shadow(~'0px 3px 5px -4px #000'); color:#0676B8;
+                    
+                    time{font-size:0.8em; color:#000; position:relative; float:right; margin-right:8px;}
+                }
+            }
+        }
+    }
+/*******************/
+    >#chat-input{ position:relative; height:100px; width:98%; .box-shadow(~'-1px -12px 13px -10px #666'); padding:1%;
+    >span {width:20px; height:20px; text-align:center; color:#FFF; display:none; position:absolute; border:1px solid #333; top:-18px; border-radius:4px; background:#0676B8;}
+    /**/
+    >textarea{position:relative; width:80%; height:95%; resize:none;}
+
+    > [href="/post"] {.trans(all 0.3s ease-in); .chatGrad(); margin-left:10px; padding:10px; border-radius:5px; .box-shadow(0 0 1px 1px #666); color:#FFF; text-transform:uppercase; text-decoration:none;
+        &:hover{.box-shadow(0 0 1px 1px #000);}
+        }
+    }
+}

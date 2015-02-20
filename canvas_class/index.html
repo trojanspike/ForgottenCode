@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Lib canvas</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+<script src="libs/canvas.class.js"></script>
+</head>
+<body>
+<div class="myCanvas" >
+<canvas id="canvasID" width="500" height="500"></canvas>
+<p>Here is using the Js class - has click event</p>
+</div>
+
+<div class="myCanvas" >
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<p>Here is using the inline js code</p>
+</div>
+
+<script>
+var canvasID = new myCanvas('canvasID');
+
+/* As the js class becomes better , tracking should be able to
+be done for what ever is added . Images / shapes / text etc */
+// only stays a second because of animation + over written
+
+canvasID.addImage('image.png', {posX:0, posY:0, imgW:100, imgH:100},
+	function(img){
+
+		// something strange here - changes image each reload
+		setTimeout(function(){
+
+			canvasID.animate(img.id, 300, 300);
+		}, 1500)
+		console.log(canvasID.addedImages);
+// might be an idea to have a chain on this aswell as the callback
+// - with the current selected & added image
+});
+/* next - some idaes | enhancements */
+// addImage - array = mult / object = single
+// CC.addImage({path:'path.jpg', posX:0, posY:0, width:100, height:100});
+// 
+// CC.addImage([{path:'path.jpg', posX:0, posY:0, width:100, height:100},{path:'path.jpg', posX:0, posY:0, width:100, height:100}]);
+
+
+/* Doing it inline */
+var canvas = document.getElementById('myCanvas'),
+ctx = canvas.getContext('2d'),
+img = new Image(),
+timer, posX, posY, imgW, imgH;
+
+img.src = 'image.png';
+
+img.onload = function(){
+	posX = canvas.width/2 - img.width/2;
+	posY = canvas.height/2 - img.height/2;
+	imgW = img.width;
+	imgH = img.height;
+	ctx.drawImage(img, posX, posY, imgW, imgH);
+	animate()
+}
+
+function animate(){
+	timer = setInterval(function(){
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		--posX; ++imgW;
+		--posY; ++imgH;
+		ctx.drawImage(img, posX, posY, imgW, imgH);
+
+		if(posX ===  0){
+			clearInterval(timer);
+			var imgD = ctx.getImageData(0,0, 100, 100);
+			document.getElementById('myCanvas').getContext('2d').putImageData(imgD, 380, 380);
+		}
+	}, 1);
+}
+</script>
+</body>
+</html>

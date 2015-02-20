@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>JS Class</title>
+
+	<p id="set-out"></p>
+	<p id="feed1"></p>
+	<p id="feed2"></p>
+	<p id="feed3"></p>
+	<p id="feed4"></p>
+	<script src="js_class.js"></script>
+</head>
+<body>
+
+
+<script>
+/* now lets see the class in action */
+window.onload = function(){
+	console.log(myClass);
+	
+	var count = 0;
+	var set = setInterval(function(){
+		switch(count){
+			case 4:
+				myClass.Method1(document.getElementById('feed1'));
+			break;
+
+			case 8:
+				myClass.Method2(document.getElementById('feed2'), 'passed pram');
+			break;
+
+			case 12:
+				myClass.Method1(document.getElementById('feed3')).Method2(document.getElementById('feed4'), '<span style="color:red;">CHAINED METHODS -</span>');
+				/* because we use return this; in method1 we are able to chain a function | method onto it. 
+				in this case we chain the method2 */
+			break;
+		}
+
+		document.getElementById('set-out').innerHTML = count+ '- RUNNING';
+		if(count === 15){
+			clearInterval(set);
+			document.getElementById('set-out').innerHTML = count+'- END';
+		}
+		++ count;
+	}, 1000);
+}
+</script>
+</body>
+</html>

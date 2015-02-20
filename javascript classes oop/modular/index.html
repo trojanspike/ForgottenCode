@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Modular js</title>
+	<script src="modular.class.js"></script>
+</head>
+<body>
+
+<h3>View console and scripts to see how it works</h3>
+
+<ul>
+<li>We make a new myModules() from the JS class</li>
+<li>Then make a new module 1 using the var for myModules main OBJ . new myModules.module1(); </li>
+</ul>
+
+<p>Things to note are that the module 1 doesn't let the use of prorotype from another script bercause we use return {} , which contains the methods</p>
+<p>Modules 2 lets the use of prototype from other scrips because we use this.methodname in the class</p>
+
+<script>
+// myModules will be the object container 
+// the modules
+console.log(myModules);
+
+// accessing module 1 myModules.module1
+var my_module_1 = new myModules.module1();
+console.log(my_module_1);
+
+// accessing module 2 myModules.module2
+var my_module_2 = new myModules.module2();
+console.log(my_module_2);
+</script>
+</body>
+</html>

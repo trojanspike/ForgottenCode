@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>no protoype</title>
+	<script src="no.protoype.js"></script>
+</head>
+<body>
+
+<script>
+
+var run1 = new no_p_type();
+
+run1.method1();
+
+no_p_type.prototype.ourMethod = function(){
+	alert('this is a prototype method which will not be added to our script');
+	// it won't add to our class so will give an error and stop the script
+};
+
+var privProt = new no_p_type();
+privProt.ourMethod(); // error and stript stopped
+
+</script>
+</body>
+</html>

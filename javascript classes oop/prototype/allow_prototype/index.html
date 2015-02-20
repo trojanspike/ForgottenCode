@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>allow protoype</title>
+	<script src="allow.proto.js"></script>
+</head>
+<body>
+
+<div id="set"></div>
+<script>
+
+// add our method to the main window.allow_p_type variable
+allow_p_type.prototype.ourMethod = function(pram){
+	alert('this is a prototype method which has been added to our script -'+pram);
+};
+
+var allowPrototype = new allow_p_type();
+
+// run a lil alert test
+
+var c= 0, set = setInterval(function(){
+document.getElementById('set').innerHTML = c +' RUNNING';
+	switch(c){
+		case 2:
+		document.getElementById('set').innerHTML = c +' RUNNING, our class method1 alert';
+		allowPrototype.method1();
+		break;
+
+		case 4:
+		document.getElementById('set').innerHTML = c +' RUNNING, our added method alert';
+		allowPrototype.ourMethod('PASSED PRAM');
+		break;
+	}
+
+	if(c === 6){
+		document.getElementById('set').innerHTML = c +' END';
+		clearInterval(set);
+	}
+	++c;
+}, 1000);
+
+console.log(allowPrototype);
+</script>
+</body>
+</html>
